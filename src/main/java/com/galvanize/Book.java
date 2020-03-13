@@ -1,6 +1,6 @@
 package com.galvanize;
 
-public class Book {
+public class Book implements Publisher {
 
     private String title;
     private String published_date;
@@ -54,5 +54,21 @@ public class Book {
 
     public Author getAuthor() {
         return author;
+    }
+
+    @Override
+    public void publish() {
+        System.out.println("Book published date: " + getPublished_date());
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", published_date='" + published_date + '\'' +
+                ", genre='" + genre + '\'' +
+                ", pages=" + pages +
+                ", author=" + author +
+                '}';
     }
 }
